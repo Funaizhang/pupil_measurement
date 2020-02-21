@@ -9,8 +9,8 @@ import itertools
 class measurePupil(object):
 
     def __init__(self, extend, circularity, is_full_face, wait_key, show_boxes, save_frames):
-        self.extend       = extend
-        self.circularity  = circularity
+        self.extend             = extend
+        self.circularity        = circularity
         self.is_full_face       = is_full_face
         self.wait_key           = wait_key
         self.show_boxes         = show_boxes
@@ -194,12 +194,12 @@ class measurePupil(object):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # input params
-    parser.add_argument('-extend', default=0.8)
-    parser.add_argument('-circularity', default=1.2)
-    parser.add_argument('-is_full_face', default=True)
-    parser.add_argument('-wait_key', default=100)
-    parser.add_argument('-show_boxes', default=False)
-    parser.add_argument('-save_frames', default=False)
+    parser.add_argument('-extend', default=0.8, type=float)
+    parser.add_argument('-circularity', default=1.2, type=float)
+    parser.add_argument('-is_full_face', default=True, type=bool)
+    parser.add_argument('-wait_key', default=100, type=int)
+    parser.add_argument('-show_boxes', default=False, action='store_true')
+    parser.add_argument('-save_frames', default=False, action='store_true')
     args = parser.parse_args()
 
     cur_dir = os.path.dirname(__file__)
