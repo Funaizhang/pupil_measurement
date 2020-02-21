@@ -7,8 +7,10 @@
 This program aims to measure pupil dilation from a videostream and output the result on-screen.
 
 ## Dependencies
+```
 - Python >= 3.7
 - OpenCV >= 4.1.0
+```
 
 ## Usage example
 
