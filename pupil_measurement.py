@@ -25,6 +25,9 @@ class measurePupil(object):
 
     
     def doVideo(self, input_file):
+        """
+            Main function to perform pupil dilation measurement.
+        """
 
         # load haar cascades
         self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -80,8 +83,10 @@ class measurePupil(object):
         cv2.destroyAllWindows()
 
 
-    # doFace measures the pupil given the face ROI
     def doFace(self, frame, faces):
+        """
+            doFace measures the pupil given the face ROI
+        """
         for (x,y,w,h) in faces:
             # outline detected face
             if self.show_boxes:
@@ -94,8 +99,10 @@ class measurePupil(object):
         return pupil_ave
             
     
-    # doEye measures the pupil given the eye ROI
     def doEye(self, frame, eyes):
+        """
+            doEye measures the pupil given the eye ROI
+        """
         pupil_widths = []
 
         # clean up the eye frames by removing the larger frames
